@@ -1,0 +1,70 @@
+<?php
+/**
+ * User: faraikanyepi
+ */
+class Farai_Countryregions_Model_System_Config_Source_Localeoptions
+{
+    public function toOptionArray(){
+        return array(
+            array('value' => '', 'label'=>Mage::helper('adminhtml')->__('--Please Select--')),
+            array('value' => 'af_ZA', 'label'=>Mage::helper('adminhtml')->__('Afrikaans (South Africa)')),
+            array('value' => 'ar_EG', 'label'=>Mage::helper('adminhtml')->__('Arabic (Egypt)')),
+            array('value' => ' ar_KW','label'=>Mage::helper('adminhtml')->__('Arabic (Kuwait)')),
+            array('value' => ' ar_MA','label'=>Mage::helper('adminhtml')->__('Arabic (Morocco)')),
+            array('value' => ' ar_SA','label'=>Mage::helper('adminhtml')->__('Arabic (Saudi Arabia)')),
+            array('value' => ' bg_BG','label'=>Mage::helper('adminhtml')->__('Bulgarian (Bulgaria)')),
+            array('value' => ' bn_BD','label'=>Mage::helper('adminhtml')->__('Bengali (Bangladesh)')),
+            array('value' => ' bs_BA','label'=>Mage::helper('adminhtml')->__('Bosnian (Bosnia)')),
+            array('value' => ' ca_ES','label'=>Mage::helper('adminhtml')->__('Catalan (Catalonia)')),
+            array('value' => ' cs_CZ','label'=>Mage::helper('adminhtml')->__('Czech (Czech Republic)')),
+            array('value' => ' cy_GB','label'=>Mage::helper('adminhtml')->__('Welsh (United Kingdom)')),
+            array('value' => ' da_DK','label'=>Mage::helper('adminhtml')->__('Danish (Denmark)')),
+            array('value' => ' de_AT','label'=>Mage::helper('adminhtml')->__('German (Austria)')),
+            array('value' => ' de_CH','label'=>Mage::helper('adminhtml')->__('German (Switzerland)')),
+            array('value' => ' de_DE','label'=>Mage::helper('adminhtml')->__('German (Germany) ')),
+            array('value' => ' el_GR','label'=>Mage::helper('adminhtml')->__('Greek (Greece)')),
+            array('value' => ' en_GB','label'=>Mage::helper('adminhtml')->__('English (Great Britain)')),
+            array('value' => ' en_AU','label'=>Mage::helper('adminhtml')->__('English (Australia)')),
+            array('value' => ' es_AR','label'=>Mage::helper('adminhtml')->__('Spanish (Argentina)')),
+            array('value' => ' es_CL','label'=>Mage::helper('adminhtml')->__('Spanish (Chile) ')),
+            array('value' => ' es_CO','label'=>Mage::helper('adminhtml')->__('Spanish (Colombia)')),
+            array('value' => ' es_ES','label'=>Mage::helper('adminhtml')->__('Spanish (Spain)')),
+            array('value' => ' es_MX','label'=>Mage::helper('adminhtml')->__('Spanish (Mexico)')),
+            array('value' => ' fa_IR','label'=>Mage::helper('adminhtml')->__('Persian (Iran)')),
+            array('value' => ' fil_PH','label'=>Mage::helper('adminhtml')->__('Filipino (Philippines)')),
+            array('value' => ' fi_FI', 'label'=>Mage::helper('adminhtml')->__('Finnish (Finland)')),
+            array('value' => ' fr_CA','label'=>Mage::helper('adminhtml')->__('French (Canada)')),
+            array('value' => ' fr_FR','label'=>Mage::helper('adminhtml')->__('French (France)')),
+            array('value' => ' he_IL','label'=>Mage::helper('adminhtml')->__('Hebrew (Israel)')),
+            array('value' => ' hr_HR','label'=>Mage::helper('adminhtml')->__('Croatian (Croatia)')),
+            array('value' => ' hu_HU','label'=>Mage::helper('adminhtml')->__('Hungarian (Hungary)')),
+            array('value' => ' id_ID','label'=>Mage::helper('adminhtml')->__('Indonesian (Indonesia)')),
+            array('value' => ' it_CH','label'=>Mage::helper('adminhtml')->__('Italian (Switzerland)')),
+            array('value' => ' it_IT','label'=>Mage::helper('adminhtml')->__('Italian (Italy)')),
+            array('value' => ' ja_JP','label'=>Mage::helper('adminhtml')->__('Japanese (Japan)')),
+            array('value' => ' lt_LT','label'=>Mage::helper('adminhtml')->__('Lithuanian (Lithuania)')),
+            array('value' => ' lv_LV','label'=>Mage::helper('adminhtml')->__('Latvian (Latvia)')),
+            array('value' => ' mk_MK','label'=>Mage::helper('adminhtml')->__('Macedonian (Macedonia)')),
+            array('value' => ' mn_MN','label'=>Mage::helper('adminhtml')->__('Mongolian (Mongolia)')),
+            array('value' => ' ms_MY','label'=>Mage::helper('adminhtml')->__('Malaysian (Malaysia)')),
+            array('value' => ' nb_NO','label'=>Mage::helper('adminhtml')->__('Norwegian Bokmal (Norway)')),
+            array('value' => ' nl_NL','label'=>Mage::helper('adminhtml')->__('Dutch (Netherlands)')),
+            array('value' => ' nn_NO','label'=>Mage::helper('adminhtml')->__('Norwegian Nynorsk (Norway)')),
+            array('value' => ' pl_PL','label'=>Mage::helper('adminhtml')->__('Polish (Poland) ')),
+            array('value' => ' pt_BR','label'=>Mage::helper('adminhtml')->__('Portuguese (Brazil)')),
+            array('value' => ' pt_PT','label'=>Mage::helper('adminhtml')->__('Portuguese (Portugal) ')),
+            array('value' => ' ro_RO','label'=>Mage::helper('adminhtml')->__('Romanian (Romania)')),
+            array('value' => ' ru_RU','label'=>Mage::helper('adminhtml')->__('Russian (Russia)')),
+            array('value' => ' sk_SK','label'=>Mage::helper('adminhtml')->__('Slovak (Slovakia)')),
+            array('value' => ' sl_SI','label'=>Mage::helper('adminhtml')->__('Slovenian (Slovenia)')),
+            array('value' => ' sq_AL','label'=>Mage::helper('adminhtml')->__('Albanian (Albania)')),
+            array('value' => ' sr_RS','label'=>Mage::helper('adminhtml')->__('Serbian (Serbia) ')),
+            array('value' => ' sv_SE','label'=>Mage::helper('adminhtml')->__('Swedish')),
+            array('value' => ' th_TH','label'=>Mage::helper('adminhtml')->__('Thai (Thailand)')),
+            array('value' => ' tr_TR','label'=>Mage::helper('adminhtml')->__('Turkish (Turkey) ')),
+            array('value' => ' uk_UA','label'=>Mage::helper('adminhtml')->__('Ukrainian (Ukraine)')),
+            array('value' => ' vi_VN','label'=>Mage::helper('adminhtml')->__('Vietnamese (Vietnam)'))
+        );
+    }
+
+}

@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Farai_Countryregions>
+            <version>0.1.0</version>
+        </Farai_Countryregions>
+    </modules>
+    <global>
+        <models>
+            <countryregions>
+                <class>Farai_Countryregions_Model</class>
+            </countryregions>
+        </models>
+        <blocks>
+            <countryregions>
+                <class>Farai_Countryregions_Block</class>
+            </countryregions>
+        </blocks>
+        <helpers>
+            <countryregions>
+                <class>Farai_Countryregions_Helper</class>
+            </countryregions>
+        </helpers>
+    </global>
+</config>

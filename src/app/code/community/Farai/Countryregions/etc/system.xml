@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<!--
+/**
+**/
+-->
+<config>
+  <sections>
+   <shipping translate="label" module="shipping">
+             <show_in_store>1</show_in_store>       <groups>
+        <farai_countryregions translate="label">
+          <label>Farai Shipping Country Regions</label>
+          <frontend_type>text</frontend_type>
+          <sort_order>1000</sort_order>
+          <show_in_default>1</show_in_default>
+          <show_in_website>1</show_in_website>
+          <show_in_store>1</show_in_store>
+          <fields>
+              <the_country_id translate="label">
+                  <label>Country</label>
+                  <frontend_type>select</frontend_type>
+                  <frontend_class>countries</frontend_class>
+                  <source_model>adminhtml/system_config_source_country</source_model>
+                  <sort_order>1</sort_order>
+                  <show_in_default>1</show_in_default>
+                  <show_in_website>1</show_in_website>
+                  <show_in_store>1</show_in_store>
+                  <comment>
+                      <![CDATA[Please select country you wish to add regions to ]]>
+                  </comment>
+              </the_country_id>
+              <locale translate="label">
+                  <label>Locale</label>
+                  <frontend_type>select</frontend_type>
+                  <source_model>countryregions/system_config_source_localeoptions</source_model>
+                  <sort_order>2</sort_order>
+                  <show_in_default>1</show_in_default>
+                  <show_in_website>1</show_in_website>
+                  <show_in_store>1</show_in_store>
+                  <comment>
+                      <![CDATA[Please select the translation that corresponds to the region names you are adding ]]>
+                  </comment>
+              </locale>
+              <region_names translate="label">
+                  <label>Import Country Region Names</label>
+                  <frontend_type>import</frontend_type>
+                  <backend_model>countryregions/system_config_backend_shipping_countryregions</backend_model>
+                  <sort_order>3</sort_order>
+                  <show_in_default>1</show_in_default>
+                  <show_in_website>1</show_in_website>
+                  <show_in_store>1</show_in_store>
+                  <comment>
+                      <![CDATA[Import the Country Region Names .csv in English ]]>
+                  </comment>
+              </region_names>
+              <translated_region_names translate="label">
+                  <label>Import Translated Region Names</label>
+                  <frontend_type>import</frontend_type>
+                  <backend_model>countryregions/system_config_backend_shipping_translatedregions</backend_model>
+                  <sort_order>4</sort_order>
+                  <show_in_default>1</show_in_default>
+                  <show_in_website>1</show_in_website>
+                  <show_in_store>1</show_in_store>
+                  <comment>
+                      <![CDATA[Import the translated Country Region Names .csv that correspond to the locale you've selected above ]]>
+                  </comment>
+              </translated_region_names>
+          </fields>
+        </farai_countryregions>
+      </groups>
+     </shipping>
+  </sections>
+</config>

@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Farai_Countryregions>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Farai_Countryregions>
+    </modules>
+</config>
