@@ -3,6 +3,26 @@
 
 class Farai_Countryregions_Model_Mysql4_Translatedregions extends Mage_Directory_Model_Mysql4_Region
 {
+    /**
+     * Array of unique table rate keys to protect from duplicates
+     *
+     * @var array
+     */
+    protected $_importUniqueHash = array();
+
+    /**
+     * Errors in import process
+     *
+     * @var array
+     */
+    protected $_importErrors = array();
+
+    /**
+     * Count of imported table rates
+     *
+     * @var int
+     */
+    protected $_importedRows = 0;
 
     /**
      * @return $this
@@ -16,7 +36,6 @@ class Farai_Countryregions_Model_Mysql4_Translatedregions extends Mage_Directory
         //Selected locale
         $locale = Mage::getStoreConfig('shipping/farai_countryregions/locale');
 
-        //csv file
         $data = $_FILES['groups']['tmp_name']['farai_countryregions']['fields']['translated_region_names']['value'];
 
         if (empty($countryCode) || empty($locale) || empty($data)) {
@@ -31,7 +50,6 @@ class Farai_Countryregions_Model_Mysql4_Translatedregions extends Mage_Directory
         $io->open(array('path' => $fileInfo['dirname']));
         $io->streamOpen($fileInfo['basename'], 'r');
 
-        //check file format
         $headers = $io->streamReadCsv();
         if ($headers === false || count($headers) < 2) {
             $io->streamClose();
@@ -85,7 +103,7 @@ class Farai_Countryregions_Model_Mysql4_Translatedregions extends Mage_Directory
 
 
     /**
-     * CSV format is 2 columns - iso3/iso2 region code and Translated region name
+     * CSV format is 2 columns - iso2 region code and Translated region name
      *
      * @param $locale
      * @param $iso2CountryId
@@ -107,35 +125,28 @@ class Farai_Countryregions_Model_Mysql4_Translatedregions extends Mage_Directory
         if (isset($locale)) {
             $chosenLocale = $locale;
         } else {
-            $this->_importErrors[] = Mage::helper('shipping')->__('Invalid Locale Selected Or No locale selected');
+            $this->_importErrors[] = Mage::helper('shipper')->__('Invalid Locale Selected Or No locale selected');
             return false;
         }
 
-        //get region id for supplied region code
+        //region id
         if (isset($row[0]) && $row[0] != '*' || $row[0] != '') {
 
             $regionCode = $row[0];
 
             $regionModel = Mage::getModel('directory/region')->loadByCode($regionCode, $iso2CountryId);
-            $id = $regionModel->getId();
-
-            if ($id != null || !empty($id)) {
-                $regionId = $id;
-            } else {
-                $this->_importErrors[] = Mage::helper('shipping')->__('Failed to find Region ID for supplied Region Code "%s" supplied in the Row #%s.', $row[0], $rowNumber);
-                return false;
-            }
+            $regionId = $regionModel->getId();
 
         } else {
-            $this->_importErrors[] = Mage::helper('shipping')->__('Invalid Region Code format for "%s" supplied in the Row #%s.', $row[0], $rowNumber);
+            $this->_importErrors[] = Mage::helper('shipper')->__('Invalid Region Code format for "%s" supplied in the Row #%s.', $row[0], $rowNumber);
             return false;
         }
 
-        //get region name
+        //validate region name
         if (isset($row[1]) && $row[1] != '*' || $row[1] != '') {
             $regionName = $row[1];
         } else {
-            $this->_importErrors[] = Mage::helper('shipping')->__('Invalid Region Name format for "%s" supplied in the Row #%s.', $row[1], $rowNumber);
+            $this->_importErrors[] = Mage::helper('shipper')->__('Invalid Region Name format for "%s" supplied in the Row #%s.', $row[1], $rowNumber);
             return false;
         }
 
