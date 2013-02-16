@@ -9,7 +9,11 @@
         <models>
             <countryregions>
                 <class>Farai_Countryregions_Model</class>
+                <resourceModel>countryregions_mysql4</resourceModel>
             </countryregions>
+            <countryregions_mysql4>
+                <class>Farai_Countryregions_Model_Mysql4</class>
+            </countryregions_mysql4>
         </models>
         <blocks>
             <countryregions>

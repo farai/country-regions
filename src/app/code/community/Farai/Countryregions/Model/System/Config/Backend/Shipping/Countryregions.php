@@ -10,6 +10,7 @@ class Farai_Countryregions_Model_System_Config_Backend_Shipping_Countryregions e
      *
      **/
     public function _afterSave(){
+
        Mage::getResourceModel('countryregions/countryregions')->uploadRegions($this);
     }
 }
