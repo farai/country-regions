@@ -35,8 +35,9 @@ class Farai_Countryregions_Model_Mysql4_Countryregions extends Mage_Directory_Mo
      */
     public function uploadRegions()
     {
+        $iso2CountryId = $_REQUEST['groups']['farai_countryregions']['fields']['the_country_id']['value'];
+        //$iso2CountryId = Mage::getStoreConfig('shipping/farai_countryregions/the_country_id');
 
-        $iso2CountryId = Mage::getStoreConfig('shipping/farai_countryregions/the_country_id');
         $data = $_FILES['groups']['tmp_name']['farai_countryregions']['fields']['region_names']['value'];
 
         if (empty($iso2CountryId) || empty($data)) {

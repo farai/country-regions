@@ -30,11 +30,19 @@ class Farai_Countryregions_Model_Mysql4_Translatedregions extends Mage_Directory
     public function uploadTranslatedRegions()
     {
 
+        //TODO::Get currently selected country at time save config is clicked
         //Selected country code
-        $countryCode = Mage::getStoreConfig('shipping/farai_countryregions/the_country_id');
+        $countryCode = $_REQUEST['groups']['farai_countryregions']['fields']['the_country_id']['value'];
 
+        //Cant use this as is gets previously stored config value but we want currently selected value
+       // $countryCode = Mage::getStoreConfig('shipping/farai_countryregions/the_country_id');
+
+        //TODO::Get currently selected locale at time save config is clicked
         //Selected locale
-        $locale = Mage::getStoreConfig('shipping/farai_countryregions/locale');
+        $locale = $_REQUEST['groups']['farai_countryregions']['fields']['locale']['value'];
+
+        //Cant use this as is gets previously stored config value but we want currently selected value
+        //$locale = Mage::getStoreConfig('shipping/farai_countryregions/locale');
 
         $data = $_FILES['groups']['tmp_name']['farai_countryregions']['fields']['translated_region_names']['value'];
 
