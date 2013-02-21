@@ -35,8 +35,7 @@ class Farai_Countryregions_Model_Mysql4_Countryregions extends Mage_Directory_Mo
      */
     public function uploadRegions()
     {
-        $iso2CountryId = $_REQUEST['groups']['farai_countryregions']['fields']['the_country_id']['value'];
-        //$iso2CountryId = Mage::getStoreConfig('shipping/farai_countryregions/the_country_id');
+        $iso2CountryId = $_POST['groups']['farai_countryregions']['fields']['the_country_id']['value'];
 
         $data = $_FILES['groups']['tmp_name']['farai_countryregions']['fields']['region_names']['value'];
 
@@ -137,7 +136,6 @@ class Farai_Countryregions_Model_Mysql4_Countryregions extends Mage_Directory_Mo
         //validate region code
         if (isset($row[0]) && $row[0] != '*' || $row[0] != '') {
 
-            //TODO::Validate supplied region code as ISO2 format
             $regionCode = $row[0];
         } else {
             $this->_importErrors[] = Mage::helper('shipper')->__('Invalid Region Code format for "%s" supplied in the Row #%s.', $row[0], $rowNumber);
